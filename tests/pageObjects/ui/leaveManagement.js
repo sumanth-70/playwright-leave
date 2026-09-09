@@ -13,7 +13,7 @@ export default class LeaveManagementPage {
         this.commentBox=page.locator('textarea');
         this.applyButton=page.getByRole('button', { name: 'Apply' });
         this.successMessage=page.getByText('Success').first();
-
+        //fixed the changes
         // My Leave Locators
         this.myLeaveLink=page.getByRole('link', { name: 'My Leave' });
         this.leaveStatusDropdown=page.locator('div').filter({ hasText: /^Select$/ }).first();
