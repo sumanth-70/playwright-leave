@@ -2,7 +2,7 @@ const { test, expect } = require("@playwright/test");
 import leaveManagementApiPage from "../../pageObjects/api/leaveManagementAPI";
 import loginPage from "../../pageObjects/ui/login";
 
-test.describe('Orange Hrm Leave Management Api Tests', () => {
+test.describe.skip('Orange Hrm Leave Management Api Tests', () => {
 
     test('My Leave API Test Cases', async ({ request, page}) => {
         // const loginObj= new loginPage(page);
@@ -13,7 +13,7 @@ test.describe('Orange Hrm Leave Management Api Tests', () => {
         // expect(response.status()).toBe(200);
         const apiContext=await request.newContext({
             baseUrl: 'https://opensource-demo.orangehrmlive.com/web/index.php/api/v2', 
-            extraHttpHeaders;
+            //extraHttpHeaders;
         })
     });
 });

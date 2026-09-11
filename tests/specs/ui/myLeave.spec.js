@@ -20,4 +20,4 @@ test.describe ('My Leave', ()=> {
         await leaveObj.myLeave();
         await leaveObj.timeOut;
     });
-})
+}) 
