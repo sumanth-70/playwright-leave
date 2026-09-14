@@ -9,23 +9,26 @@ pipeline {
                 checkout scm
             }
         }
-
-        stage('Build') {
+        stage('Install dependencies') {
             steps {
-                echo 'Building the application...'
+                bat 'npm install'
             }
         }
-
-        stage('Test') {
+        stage('Install Playwright') {
             steps {
-                echo 'Running tests...'
+                bat 'npx playwright install'
             }
         }
-
-        stage('Deploy') {
+        stage('Running test') {
             steps {
-                echo 'Deploying application...'
+                bat 'npx playwright test'
             }
         }
     }
-}
+        post{
+            always{
+                    echo 'Building the application...'
+            }
+                
+            }
+        }
