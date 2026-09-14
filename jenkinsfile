@@ -9,6 +9,17 @@ pipeline {
                 checkout scm
             }
         }
+        stage('Check Node') {
+    steps {
+        sh '''
+            echo "PATH=$PATH"
+            which node || true
+            which npm || true
+            node --version || true
+            npm --version || true
+        '''
+    }
+}
         stage('Install dependencies') {
             steps {
                 sh 'npm install'
