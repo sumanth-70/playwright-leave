@@ -11,17 +11,17 @@ pipeline {
         }
         stage('Install dependencies') {
             steps {
-                bat 'npm install'
+                sh 'npm install'
             }
         }
         stage('Install Playwright') {
             steps {
-                bat 'npx playwright install'
+                sh 'npx playwright install'
             }
         }
         stage('Running test') {
             steps {
-                bat 'npx playwright test'
+                sh 'npx playwright test'
             }
         }
     }
