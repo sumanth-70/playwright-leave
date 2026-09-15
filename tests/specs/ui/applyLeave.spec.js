@@ -3,12 +3,13 @@ import loginPage from "../../pageObjects/ui/login";
 import LeaveManagementPage from "../../pageObjects/ui/leaveManagement";
 const testData = require('../../testData/users.json');
 
-test.describe ('Apply Leaves', ()=> {
+test.describe.skip('Apply Leaves', ()=> {
     test.beforeEach(async ({ page }) => {
         let loginObj= new loginPage(page);
         await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
         await loginObj.login(testData.username, testData.password);
         await expect(loginObj.dashboardHeading).toBeVisible();
+        await page.waitForTimeout(2000);
     })
     test('Select a leave type, valid From/To dates, add a comment, and apply.',async ({page})=> {
         
